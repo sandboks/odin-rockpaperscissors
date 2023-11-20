@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<!--
+For now, just write each function and test the output with console.log.
+
+Write a function called add7 that takes one number and returns that number + 7.
+Write a function called multiply that takes 2 numbers and returns their product.
+Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+Write a function called lastLetter that takes a string and returns the very last letter of that string:
+lastLetter("abcd") should return "d"
+
+--> 
+
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+
+    function add7(n) {
+        return n + 7
+    }
+
+    console.log(add7(11))
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    console.log(multiply(33, 3))
+
+    function capitalize(s) {
+        let tail = s.substring(1).toLowerCase();
+        return s.charAt(0).toUpperCase() + tail;
+    }
+    console.log(capitalize("UPPERCASE"))
+
+    function lastLetter(s) {
+        return s.charAt(s.length-1)
+    }
+    console.log(lastLetter("abcd"))
+
+    console.log("Hello, World!")
+
+/*
+Write a program that takes a user’s input and prints the numbers from one to the number the user entered. However, for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz.
+*/
+
+    function fizzBuzz() {
+
+        let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+        if (!isNaN(answer)) {
+
+            for (let i = 1; i <= answer; i++) {
+                let s = "" + i
+                if (i % 3 == 0) {
+                    s = "Fizz"
+                }
+                if (i % 5 == 0) {
+                    s = "Buzz"
+                }
+                if (i % 15 == 0) {
+                    s = "FizzBuzz"
+                }
+                console.log(s);
+            }
+            
+        }
+    }
+    fizzBuzz()
+
+
+
+  </script>
+</body>
+</html>
