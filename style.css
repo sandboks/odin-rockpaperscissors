@@ -41,7 +41,7 @@ body {
     flex: 1;
     align-items: center;
 
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 #pScore, #cScore {
@@ -53,7 +53,7 @@ body {
     display: flex;
     flex: 1;
     
-    padding:12px;
+    padding: 24px 0px;
 }
 
 .buttonsDisplay button {

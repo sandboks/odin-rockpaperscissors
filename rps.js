@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
             cScore++;
             break;
         case 2:
-            message += "You win!"
+            message += "You win! :D"
             pScore++;
             break;
     }
