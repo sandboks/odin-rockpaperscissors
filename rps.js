@@ -1,5 +1,42 @@
+// declarations
 const choices = ["ROCK", "PAPER", "SCISSORS"];
 const outcomes = ["TIE", "LOSE", "WON"]
+
+let pScore = 0;
+let cScore = 0;
+
+let playerInput = 0;
+let computerInput = 0;
+
+
+
+
+// UI logic
+
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+        //alert(button.id);
+        // assign the player's input from the button
+        for (let i = 0; i < choices.length; i++) {
+            if (choices[i] === button.id.toUpperCase()) {
+                playerInput = i
+            }
+        }
+
+        // trigger playing a round of the game
+        playRound(playerInput, getComputerChoice())
+    });
+});
+
+
+// the game itself
+
 
 function getComputerChoice() {
     let i = Math.floor(Math.random() * 3)
@@ -7,7 +44,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let difference = Math.abs((playerSelection - computerSelection))
+    //let difference = Math.abs((playerSelection - computerSelection))
+    let difference = getOutcome(playerSelection, computerSelection);
 
     let message = "You: [" + choices[playerSelection] + "] \nCPU: [" + choices[computerSelection] + "]\nOutcome: "
 
@@ -17,25 +55,35 @@ function playRound(playerSelection, computerSelection) {
             break;
         case 1:
             message += "You lose! :("
-        break;
+            cScore++;
+            break;
         case 2:
             message += "You win!"
+            pScore++;
             break;
     }
-    console.log(message)
+    //console.log(message)
+    
+    updateScoreboard(message);
 
     return true
 }
 
 function getOutcome(p1, p2) {
-    let difference = Math.abs((p1 - p2))
+    let difference = ((p2 - p1 + 3)) % 3;
 
     return difference
 }
 
-function game(autoPlay = true) {
-    let pScore = 0
-    let cScore = 0
+function updateScoreboard(message = "") {
+    document.getElementById('pScore').textContent = pScore;
+    document.getElementById('cScore').textContent = cScore;
+    
+    let note = document.getElementById('outcomeText');
+    note.textContent = message;
+}
+
+function playEntireGame(autoPlay = true) {
 
     while (pScore < 3 && cScore < 3) {
         // get both player's input
@@ -70,4 +118,4 @@ function game(autoPlay = true) {
     }
 }
 
-game()
+//playEntireGame()
