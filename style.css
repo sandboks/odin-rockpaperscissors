@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    max-width: 1000px;
+    flex: 1;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: center; */
+    justify-content: center;
+    background-color: rgb(224, 224, 224);
+}
+
+.scoreboard h2 {
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.scoreDisplaySection {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.scoreDisplay {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+
+    border: 1px solid red;
+}
+
+#pScore, #cScore {
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-size: 72px;
+}
+
+.buttonsDisplay {
+    display: flex;
+    flex: 1;
+    
+    padding:12px;
+}
+
+.buttonsDisplay button {
+    display: flex;
+    flex: 1;
+
+    padding: 24px 12px;
+
+    align-content: center;
+    justify-content: center;
+
+    font-size: 24px;
+}

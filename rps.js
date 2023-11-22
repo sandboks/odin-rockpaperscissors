@@ -2,6 +2,8 @@
 const choices = ["ROCK", "PAPER", "SCISSORS"];
 const outcomes = ["TIE", "LOSE", "WON"]
 
+let roundsPlayed = 0;
+
 let pScore = 0;
 let cScore = 0;
 
@@ -63,7 +65,8 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
     //console.log(message)
-    
+    roundsPlayed++;
+
     updateScoreboard(message);
 
     return true
@@ -78,7 +81,8 @@ function getOutcome(p1, p2) {
 function updateScoreboard(message = "") {
     document.getElementById('pScore').textContent = pScore;
     document.getElementById('cScore').textContent = cScore;
-    
+    document.getElementById('roundsPlayed').textContent = roundsPlayed;
+
     let note = document.getElementById('outcomeText');
     note.textContent = message;
 }

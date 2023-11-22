@@ -6,24 +6,38 @@
     <title>Odin Rock Paper Scissors</title>
 
     <script src="rps.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Odin Rock Paper Scissors</h1>
+    <div class="content">
+        <h1>Odin Rock Paper Scissors</h1>
 
-    <div class="scoreboard">
-        <h2>Scoreboard:</h2>
-        <p>YOU: <span id="pScore">-</span></p>
-        <p>CPU: <span id="cScore">-</span></p>
-    </div>
+        <div class="scoreboard">
+            <h2>Scoreboard:</h2>
+            <div class="scoreDisplaySection">
+                <div class="scoreDisplay">
+                    <p>YOU:</p>
+                    <span id="pScore">-</span>
+                </div>
+                <div class="scoreDisplay">
+                    <p>CPU:</p>
+                    <span id="cScore">-</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="buttonsDisplay">
-        <button id="ROCK">ROCK</button>
-        <button id="PAPER">PAPER</button>
-        <button id="SCISSORS">SCISSORS</button>
-    </div>
+        <div class="buttonsDisplay">
+            <button id="ROCK">ROCK</button>
+            <button id="PAPER">PAPER</button>
+            <button id="SCISSORS">SCISSORS</button>
+        </div>
 
-    <div class="outcomeDisplay">
-        <p id="outcomeText">OUTCOME</p>
+        <div class="outcomeDisplay">
+            <p>Round #<span id="roundsPlayed"></span>:</p>
+            <span id="outcomeText">OUTCOME</span>
+        </div>
     </div>
+    
+    
 </body>
 </html>
