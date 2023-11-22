@@ -33,7 +33,7 @@ function getOutcome(p1, p2) {
     return difference
 }
 
-function game(autoPlay) {
+function game(autoPlay = true) {
     let pScore = 0
     let cScore = 0
 
@@ -68,24 +68,6 @@ function game(autoPlay) {
 
 
     }
-
-    /*
-    let playerInput = prompt("Rock paper scissors!");
-    if (playerInput != null) {
-        for (let i = 0; i < choices.length; i++) {
-            if (choices[i] === playerInput.toUpperCase()) {
-                console.log(i)
-                let computerSelection = getComputerChoice()
-    
-                playRound(i, computerSelection)
-            }
-        }
-    }
-    */
-
 }
 
-game(false)
-
-
-console.log("Hello, World!")
+game()
