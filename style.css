@@ -6,6 +6,10 @@ body {
     align-content: center;
     justify-content: center;
     text-align: center;
+
+    /*
+    background-color: rgb(255, 221, 158);
+    */
 }
 
 .content {
@@ -62,12 +66,30 @@ body {
     display: flex;
     flex: 1;
 
-    padding: 24px 12px;
+    flex-wrap: wrap;
+
+    padding: 12px 12px;
 
     align-content: center;
     justify-content: center;
 
     font-size: 24px;
+}
+
+button img {
+    display: flex;
+    flex: 1;
+    flex-basis: 100%;
+
+    width: 128px;
+    aspect-ratio: 1/1;
+    
+    vertical-align: middle;
+    padding: 12px;
+}
+
+button p {
+    margin-bottom: 0px;
 }
 
 .outcomeDisplay {

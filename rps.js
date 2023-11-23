@@ -49,25 +49,20 @@ function playRound(playerSelection, computerSelection) {
     //let difference = Math.abs((playerSelection - computerSelection))
     let difference = getOutcome(playerSelection, computerSelection);
 
-    let message = "You: [" + choices[playerSelection] + "] \nCPU: [" + choices[computerSelection] + "]\nOutcome: "
-
     switch (difference) {
         case 0:
-            message += "Tied!"
             break;
         case 1:
-            message += "You lose! :("
             cScore++;
             break;
         case 2:
-            message += "You win! :D"
             pScore++;
             break;
     }
     //console.log(message)
     roundsPlayed++;
 
-    updateScoreboard(message);
+    updateScoreboard();
     updateOutcomes(playerSelection, computerSelection, difference);
 
     return true
@@ -79,13 +74,13 @@ function getOutcome(p1, p2) {
     return difference
 }
 
-function updateScoreboard(message = "") {
+function updateScoreboard() {
     document.getElementById('pScore').textContent = pScore;
     document.getElementById('cScore').textContent = cScore;
-    document.getElementById('roundsPlayed').textContent = roundsPlayed;
+    //document.getElementById('roundsPlayed').textContent = roundsPlayed;
 
-    let note = document.getElementById('outcomeText');
-    note.textContent = message;
+    //let note = document.getElementById('outcomeText');
+    //note.textContent = message;
 }
 
 function updateOutcomes(p1, p2, outcome) {
