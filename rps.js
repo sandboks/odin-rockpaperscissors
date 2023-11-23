@@ -10,7 +10,7 @@ let cScore = 0;
 let playerInput = 0;
 let computerInput = 0;
 
-
+let mostRecentRow = null;
 
 
 // UI logic
@@ -68,6 +68,7 @@ function playRound(playerSelection, computerSelection) {
     roundsPlayed++;
 
     updateScoreboard(message);
+    updateOutcomes(playerSelection, computerSelection, difference);
 
     return true
 }
@@ -87,39 +88,39 @@ function updateScoreboard(message = "") {
     note.textContent = message;
 }
 
-function playEntireGame(autoPlay = true) {
+function updateOutcomes(p1, p2, outcome) {
+    const container = document.querySelector('.outcomeDisplay');
+    
+    const newRow = document.createElement("ul");
+    //pinkDiv.style.border = "1px solid black";
+    //pinkDiv.style.backgroundColor  = "pink";
 
-    while (pScore < 3 && cScore < 3) {
-        // get both player's input
-        playerInput = 0 //prompt goes here, but...
-        computerInput = getComputerChoice()
+        let currentBox = document.createElement("li");
+        currentBox.textContent = roundsPlayed;
+        newRow.appendChild(currentBox);
 
-        if (autoPlay == false) {
-            userInput = prompt("Rock paper scissors!");
-            if (userInput != null) {
-                for (let i = 0; i < choices.length; i++) {
-                    if (choices[i] === userInput.toUpperCase()) {
-                        playerInput = i
-                    }
-                }
-            }
+        currentBox = document.createElement("li");
+        currentBox.textContent = choices[p1];
+        if (outcome == 2) {
+            currentBox.style.backgroundColor = "greenyellow";
         }
+        newRow.appendChild(currentBox);
 
-        let outcome = getOutcome(playerInput, computerInput)
-
-        playRound(playerInput, computerInput)
-
-        if (outcomes[outcome] === "WON"){
-            pScore +=1
+        currentBox = document.createElement("li");
+        currentBox.textContent = choices[p2];
+        if (outcome == 1) {
+            currentBox.style.backgroundColor = "salmon";
         }
-        else if (outcomes[outcome] === "LOSE") {
-            cScore +=1
-        }
-
-        console.log("Player: [" + pScore + "] / CPU: [" + cScore + "]")
+        newRow.appendChild(currentBox);
 
 
+    if (mostRecentRow != null) {
+        container.insertBefore(newRow, mostRecentRow);
     }
-}
+    else {
+        container.appendChild(newRow);
+    }
+    mostRecentRow = newRow;
+    //console.log(mostRecentRow);
 
-//playEntireGame()
+}
