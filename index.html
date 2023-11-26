@@ -9,55 +9,61 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Rock, Paper, Scissors!</h1>
+    </div>
+    
     <div class="content">
-        <h1>Rock Paper Scissors Sim 2023</h1>
+        <div>
 
-        <div class="scoreboard">
-            <h2>Scoreboard:</h2>
-            <div class="scoreDisplaySection">
+            <div class="scoreboard">
                 <div class="scoreDisplay">
-                    <p>YOU:</p>
-                    <span id="pScore">-</span>
+                    <h2>Scoreboard:</h2>
                 </div>
-                <div class="scoreDisplay">
-                    <p>CPU:</p>
-                    <span id="cScore">-</span>
+                <div class="scoreDisplaySection">
+                    <div class="scoreDisplay">
+                        <p>YOU:</p>
+                        <span id="pScore">-</span>
+                    </div>
+                    <div class="scoreDisplay">
+                        <p>CPU:</p>
+                        <span id="cScore">-</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="buttonsDisplay">
+                <button id="ROCK">
+                    <img src ="img/rock.png">
+                    <p>ROCK</p>
+                </button>
+                <button id="PAPER">
+                    <img src ="img/paper.png">
+                    <p>PAPER</p>
+                </button>
+                <button id="SCISSORS">
+                    <img src ="img/scissors.png">
+                    <p>SCISSORS</p>
+                </button>
+            </div>
+    
+            <div class="outcomeSection">
+                <h2>Outcome:</h2>
+                <div class="outcomeDisplay">
+                    <ul class="outcomeRowTop">
+                        <li>Round #</li>
+                        <li>YOU</li>
+                        <li>CPU</li>
+                    </ul>
                 </div>
             </div>
         </div>
+        
+        
+    </div>
 
-        <div class="buttonsDisplay">
-            <button id="ROCK">
-                <img src ="img/rock.png">
-                <p>ROCK</p>
-            </button>
-            <button id="PAPER">
-                <img src ="img/paper.png">
-                <p>PAPER</p>
-            </button>
-            <button id="SCISSORS">
-                <img src ="img/scissors.png">
-                <p>SCISSORS</p>
-            </button>
-        </div>
-
-        <div class="outcomeSection">
-            <h2>Outcome:</h2>
-            <div class="outcomeDisplay">
-                <ul class="outcomeRowTop">
-                    <li>Round #</li>
-                    <li>YOU</li>
-                    <li>CPU</li>
-                </ul>
-                <!--
-                <ul class="outcomeRow">
-                    <li>1</li>
-                    <li>ROCK</li>
-                    <li>ROCK</li>
-                </ul>
-                -->
-            </div>
-        </div>
+    <div class="footer">
+        <p><a href="https://github.com/sandboks">Copyright © Sandboks 2023</a></p>
     </div>
     
     
